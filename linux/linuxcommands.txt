@@ -1,0 +1,786 @@
+sarayu@LAPTOP-BIAO0RTG:~$ pwd
+/home/sarayu
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  asdrole           bootcamp     frnds.sh   install-tomcat   multiple.sh    odd.sh    tempy
+Hashmum   athulya           data.sh      hello.sh   krishna          mycommand.sh   odd2.sh   user1
+abc.yml   athulya1          datafile.sh  hobesdir   linux_tweet_app  mycommands.sh  state.sh  whiledemo.sh
+args.sh   athulya_playbook  food.sh      ifelse.sh  meera            myinfo.txt     temp      zing
+asd.yml   bash_alise        fordemo.sh   input.sh   multiarg.sh      nano.save      temp1
+sarayu@LAPTOP-BIAO0RTG:~$ cd temp
+sarayu@LAPTOP-BIAO0RTG:~/temp$ ls
+sarayu@LAPTOP-BIAO0RTG:~/temp$ mkdir abdtutor
+sarayu@LAPTOP-BIAO0RTG:~/temp$ ls
+abdtutor
+sarayu@LAPTOP-BIAO0RTG:~/temp$ cd abdtutor
+sarayu@LAPTOP-BIAO0RTG:~/temp/abdtutor$ mkdir dir1
+sarayu@LAPTOP-BIAO0RTG:~/temp/abdtutor$ mkdir2
+
+Command 'mkdir2' not found, did you mean:
+
+  command 'mkdir' from deb coreutils (8.30-3ubuntu2)
+
+Try: sudo apt install <deb name>
+
+sarayu@LAPTOP-BIAO0RTG:~/temp/abdtutor$ mkdir dir2
+sarayu@LAPTOP-BIAO0RTG:~/temp/abdtutor$ ls
+dir1  dir2
+sarayu@LAPTOP-BIAO0RTG:~/temp/abdtutor$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/temp$ cd abdtutor/dir2
+sarayu@LAPTOP-BIAO0RTG:~/temp/abdtutor/dir2$ cd /
+sarayu@LAPTOP-BIAO0RTG:/$ pwd
+/
+sarayu@LAPTOP-BIAO0RTG:/$ ls
+bin   dev  home  lib    lib64   media  opt   root  sbin  srv  temp1  usr
+boot  etc  init  lib32  libx32  mnt    proc  run   snap  sys  tmp    var
+sarayu@LAPTOP-BIAO0RTG:/$ cd usr
+sarayu@LAPTOP-BIAO0RTG:/usr$ ls
+bin  config  games  include  lib  lib32  lib64  libexec  libx32  local  sbin  share  src
+sarayu@LAPTOP-BIAO0RTG:/usr$ cd ..
+sarayu@LAPTOP-BIAO0RTG:/$ cd sys
+sarayu@LAPTOP-BIAO0RTG:/sys$ ls
+block  bus  class  dev  devices  firmware  fs  kernel  module  power
+sarayu@LAPTOP-BIAO0RTG:/sys$ cd ..
+sarayu@LAPTOP-BIAO0RTG:/$ cd usr/local
+sarayu@LAPTOP-BIAO0RTG:/usr/local$ ls
+bin  etc  games  include  lib  man  sbin  share  src
+sarayu@LAPTOP-BIAO0RTG:/usr/local$ cd ..
+sarayu@LAPTOP-BIAO0RTG:/usr$ cd ..
+sarayu@LAPTOP-BIAO0RTG:/$ cd usr/games
+sarayu@LAPTOP-BIAO0RTG:/usr/games$ cd
+sarayu@LAPTOP-BIAO0RTG:~$ pwd
+/home/sarayu
+sarayu@LAPTOP-BIAO0RTG:~$ cd temp
+sarayu@LAPTOP-BIAO0RTG:~/temp$ mkdir -p folder1/infolder
+sarayu@LAPTOP-BIAO0RTG:~/temp$ ls
+abdtutor  folder1
+sarayu@LAPTOP-BIAO0RTG:~/temp$ cd folder1
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ ls
+infolder
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cd ../..
+sarayu@LAPTOP-BIAO0RTG:~$ pwd
+/home/sarayu
+sarayu@LAPTOP-BIAO0RTG:~$ ls > outputfile.txt
+sarayu@LAPTOP-BIAO0RTG:~$ cat outputfile.txt
+AbcImpex
+Hashmum
+abc.yml
+args.sh
+asd.yml
+asdrole
+athulya
+athulya1
+athulya_playbook
+bash_alise
+bootcamp
+data.sh
+datafile.sh
+food.sh
+fordemo.sh
+frnds.sh
+hello.sh
+hobesdir
+ifelse.sh
+input.sh
+install-tomcat
+krishna
+linux_tweet_app
+meera
+multiarg.sh
+multiple.sh
+mycommand.sh
+mycommands.sh
+myinfo.txt
+nano.save
+odd.sh
+odd2.sh
+outputfile.txt
+state.sh
+temp
+temp1
+tempy
+user1
+whiledemo.sh
+zing
+sarayu@LAPTOP-BIAO0RTG:~$ cd temp/folder1
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "Welcome to linux session">mytext.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat mytext.txt
+Welcome to linux session
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "Hi all">mytext1.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat mytext1.txt
+Hi all
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat my*
+Welcome to linux session
+Hi all
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat mytext.txt mytext1.txt
+Welcome to linux session
+Hi all
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat my*>mix.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat mix.txt
+Welcome to linux session
+Hi all
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "Good Morning">>mix.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat mix.txt
+Welcome to linux session
+Hi all
+Good Morning
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "tr1 tr2 tr3 tr4 tr5">trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat trainee.txt
+tr1 tr2 tr3 tr4 tr5
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "tr6 tr7 tr8 tr9 tr10">>trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "tr11 tr12 tr13 tr14 tr15">>trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "tr16 tr17 tr18 tr19 tr20">>trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "tr21 tr22 tr23 tr24 tr25">>trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ echo "tr26 tr27 tr28 tr29 tr30">>trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cat trainee.txt
+tr1 tr2 tr3 tr4 tr5
+tr6 tr7 tr8 tr9 tr10
+tr11 tr12 tr13 tr14 tr15
+tr16 tr17 tr18 tr19 tr20
+tr21 tr22 tr23 tr24 tr25
+tr26 tr27 tr28 tr29 tr30
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ less trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ ls
+infolder  mix.txt  mytext.txt  mytext1.txt  trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ mv mytext.txt temp ..
+mv: cannot stat 'temp': No such file or directory
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ mv mytext.txt temp
+mv: cannot stat 'mytext.txt': No such file or directory
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ ls
+infolder  mix.txt  mytext1.txt  trainee.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp/folder1$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/temp$ ls
+abdtutor  folder1  mytext.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp$ cat mytext.txt
+Welcome to linux session
+sarayu@LAPTOP-BIAO0RTG:~/temp$ cp mytext.txt backupmytext.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp$ ls
+abdtutor  backupmytext.txt  folder1  mytext.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp$ mv backupmytext.txt mytextBackup.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp$ ls
+abdtutor  folder1  mytext.txt  mytextBackup.txt
+sarayu@LAPTOP-BIAO0RTG:~/temp$ whoami
+sarayu
+sarayu@LAPTOP-BIAO0RTG:~/temp$ who
+sarayu@LAPTOP-BIAO0RTG:~/temp$ id
+uid=1000(sarayu) gid=1000(sarayu) groups=1000(sarayu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev)
+sarayu@LAPTOP-BIAO0RTG:~/temp$ w
+ 12:28:11 up 47 min,  0 users,  load average: 0.52, 0.58, 0.59
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+sarayu@LAPTOP-BIAO0RTG:~/temp$ cd
+sarayu@LAPTOP-BIAO0RTG:~$ passwd
+Changing password for sarayu.
+Current password:
+New password:
+Retype new password:
+Bad: new and old password must differ by more than just case
+New password:
+Retype new password:
+passwd: password updated successfully
+sarayu@LAPTOP-BIAO0RTG:~$ man man
+sarayu@LAPTOP-BIAO0RTG:~$ cd /
+sarayu@LAPTOP-BIAO0RTG:/$ ls
+bin   dev  home  lib    lib64   media  opt   root  sbin  srv  temp1  usr
+boot  etc  init  lib32  libx32  mnt    proc  run   snap  sys  tmp    var
+sarayu@LAPTOP-BIAO0RTG:/$ cat etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:104:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:106::/nonexistent:/usr/sbin/nologin
+syslog:x:104:110::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:111:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:113::/nonexistent:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+landscape:x:110:115::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:111:1::/var/cache/pollinate:/bin/false
+sarayu:x:1000:1000:,,,:/home/sarayu:/bin/bash
+athulya:x:1001:1001::/home/athulya:/bin/sh
+user2:x:1002:1003:,,,:/home/user2:/bin/bash
+user1:x:1003:1005:,,,:/home/user1:/bin/bash
+ust1:x:1004:1006:,,,:/home/ust1:/bin/bash
+ust2:x:1005:1007:,,,:/home/ust2:/bin/bash
+ust3:x:1006:1008:,,,:/home/ust3:/bin/bash
+sarayu@LAPTOP-BIAO0RTG:/$ sudo adduser nila
+[sudo] password for sarayu:
+Adding user `nila' ...
+Adding new group `nila' (1009) ...
+Adding new user `nila' (1007) with group `nila' ...
+Creating home directory `/home/nila' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for nila
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] y
+sarayu@LAPTOP-BIAO0RTG:/$ su - nila
+Password:
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 4.4.0-19041-Microsoft x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jan 20 12:37:54 IST 2022
+
+  System load:            0.52
+  Usage of /home:         unknown
+  Memory usage:           94%
+  Swap usage:             8%
+  Processes:              9
+  Users logged in:        0
+  IPv4 address for eth1:  172.17.16.1
+  IPv4 address for wifi0: 192.168.29.167
+  IPv6 address for wifi0: 2405:201:f00c:c81d:5052:6e38:5b92:92d0
+  IPv6 address for wifi0: 2405:201:f00c:c81d:ad25:ad04:3ddb:1f51
+
+89 updates can be applied immediately.
+39 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+This message is shown once a day. To disable it please create the
+/home/nila/.hushlogin file.
+nila@LAPTOP-BIAO0RTG:~$ su - sarayu
+Password:
+sarayu@LAPTOP-BIAO0RTG:~$ pwd
+/home/sarayu
+sarayu@LAPTOP-BIAO0RTG:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd:/usr/sbin/nologin
+systemd-timesync:x:102:104:systemd Time Synchronization,,,:/run/systemd:/usr/sbin/nologin
+messagebus:x:103:106::/nonexistent:/usr/sbin/nologin
+syslog:x:104:110::/home/syslog:/usr/sbin/nologin
+_apt:x:105:65534::/nonexistent:/usr/sbin/nologin
+tss:x:106:111:TPM software stack,,,:/var/lib/tpm:/bin/false
+uuidd:x:107:112::/run/uuidd:/usr/sbin/nologin
+tcpdump:x:108:113::/nonexistent:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+landscape:x:110:115::/var/lib/landscape:/usr/sbin/nologin
+pollinate:x:111:1::/var/cache/pollinate:/bin/false
+sarayu:x:1000:1000:,,,:/home/sarayu:/bin/bash
+athulya:x:1001:1001::/home/athulya:/bin/sh
+user2:x:1002:1003:,,,:/home/user2:/bin/bash
+user1:x:1003:1005:,,,:/home/user1:/bin/bash
+ust1:x:1004:1006:,,,:/home/ust1:/bin/bash
+ust2:x:1005:1007:,,,:/home/ust2:/bin/bash
+ust3:x:1006:1008:,,,:/home/ust3:/bin/bash
+nila:x:1007:1009:,,,:/home/nila:/bin/bash
+sarayu@LAPTOP-BIAO0RTG:~$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,sarayu
+tty:x:5:syslog
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:sarayu
+fax:x:21:
+voice:x:22:
+cdrom:x:24:sarayu
+floppy:x:25:sarayu
+tape:x:26:
+sudo:x:27:sarayu,user2
+audio:x:29:sarayu
+dip:x:30:sarayu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:sarayu
+sasl:x:45:
+plugdev:x:46:sarayu
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+systemd-timesync:x:104:
+crontab:x:105:
+messagebus:x:106:
+input:x:107:
+kvm:x:108:
+render:x:109:
+syslog:x:110:
+tss:x:111:
+uuidd:x:112:
+tcpdump:x:113:
+ssh:x:114:
+landscape:x:115:
+admin:x:116:
+netdev:x:117:sarayu
+lxd:x:118:
+sarayu:x:1000:
+athulya:x:1001:
+devops:x:1002:
+user2:x:1003:
+devops1:x:1004:
+user1:x:1005:
+ust1:x:1006:
+ust2:x:1007:
+ust3:x:1008:
+nila:x:1009:
+sarayu@LAPTOP-BIAO0RTG:~$ sudo groupadd training
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    odd.sh          tempy
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd2.sh         user1
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   outputfile.txt  whiledemo.sh
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  state.sh        zing
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myinfo.txt     temp
+asdrole   data.sh           hobesdir     meera            nano.save      temp1
+sarayu@LAPTOP-BIAO0RTG:~$
+sarayu@LAPTOP-BIAO0RTG:~$ ls -il
+total 0
+ 4785074604333138 drwxr-xr-x 1 sarayu sarayu 4096 Dec 17 14:56 AbcImpex
+80783318315960907 drwxr-xr-x 1 sarayu sarayu 4096 Jan  5 16:39 Hashmum
+18858823439685337 -rw-r--r-- 1 sarayu sarayu   89 Dec 16 10:58 abc.yml
+ 7599824371348679 -rwxrwxr-- 1 sarayu sarayu  182 Dec 20 15:14 args.sh
+37436171902645384 -rw-r--r-- 1 sarayu sarayu  120 Dec 15 17:56 asd.yml
+24769797950680794 drwxr-xr-x 1 sarayu sarayu 4096 Dec 15 17:58 asdrole
+24488322973967815 drwxr-xr-x 1 sarayu sarayu 4096 Jan  8 17:06 athulya
+11540474045277709 drwxr-xr-x 1 sarayu sarayu 4096 Dec  1 17:38 athulya1
+19140298416338247 drwxr-xr-x 1 sarayu sarayu 4096 Dec 16 15:37 athulya_playbook
+11258999068486582 -rw-r--r-- 1 sarayu sarayu   31 Dec 10 15:47 bash_alise
+30962247438259444 drwxrwxr-x 1 sarayu sarayu 4096 Dec 20 16:48 bootcamp
+ 7036874417894841 -rwxrwxr-- 1 sarayu sarayu  123 Dec 13 15:04 data.sh
+23362423067087366 -rwxrwxr-- 1 sarayu sarayu   42 Dec 13 13:35 datafile.sh
+ 5629499534341640 -rwxrwxr-- 1 sarayu sarayu  313 Dec 13 15:26 food.sh
+14636698789058330 -rwxrwxr-- 1 sarayu sarayu   13 Dec 13 12:08 fordemo.sh
+10133099161712293 -rwxrwxr-- 1 sarayu sarayu  163 Dec 13 15:40 frnds.sh
+ 7318349394489431 -rwxrwxr-- 1 sarayu sarayu  142 Dec 13 10:20 hello.sh
+ 3377699720571170 drwxr-xr-x 1 sarayu sarayu 4096 Dec  2 09:10 hobesdir
+16607023625971684 -rwxrwxr-- 1 sarayu sarayu  128 Dec 20 15:38 ifelse.sh
+54324670505158989 -rwxrwxr-- 1 sarayu sarayu   99 Dec 20 15:22 input.sh
+ 5629499534227019 drwxr-xr-x 1 sarayu sarayu 4096 Dec 16 12:07 install-tomcat
+11540474045149217 drwxr-xr-x 1 sarayu sarayu 4096 Dec  7 15:44 krishna
+ 9851624185041251 drwxr-xr-x 1 sarayu sarayu 4096 Dec 21 14:10 linux_tweet_app
+ 4785074604233953 drwxrwxr-x 1 sarayu sarayu 4096 Jan  8 17:07 meera
+ 7881299347937166 -rwxrwxr-- 1 sarayu sarayu  149 Dec 13 17:33 multiarg.sh
+ 6473924464473763 -rwxrwxr-- 1 sarayu sarayu  133 Dec 13 15:31 multiple.sh
+ 4503599627545458 -rw-r--r-- 1 sarayu sarayu   17 Dec 10 17:27 mycommand.sh
+ 2814749767281520 -rwxr-xr-x 1 sarayu sarayu    3 Dec 10 17:22 mycommands.sh
+55732045388771183 -rw-r--rwx 1 sarayu sarayu   33 Dec 10 10:19 myinfo.txt
+ 7318349394652006 -rw------- 1 sarayu sarayu    3 Dec 10 17:20 nano.save
+13510798882154385 -rwxrwxr-- 1 sarayu sarayu  140 Dec 13 15:11 odd.sh
+ 8444249301448361 -rwxrwxr-- 1 sarayu sarayu  230 Dec 13 15:46 odd2.sh
+28428972647876811 -rw-r--r-- 1 sarayu sarayu  385 Jan 20 12:06 outputfile.txt
+17451448556184797 -rw-r--r-- 1 sarayu sarayu   40 Dec 13 13:24 state.sh
+23080948090293785 drwxr-xr-x 1 sarayu sarayu 4096 Jan 20 12:27 temp
+29836347531421706 drwxrwxr-x 1 sarayu sarayu 4096 Dec 20 16:42 temp1
+20829148276708127 drwxr-xr-x 1 sarayu sarayu 4096 Dec  1 12:18 tempy
+ 9288674231605691 drwxr-xr-x 1 sarayu sarayu 4096 Dec 28 17:23 user1
+18858823439693929 -rwxrwxr-- 1 sarayu sarayu  125 Dec 13 12:18 whiledemo.sh
+14355223812307359 drwxr-xr-x 1 sarayu sarayu 4096 Dec 28 17:34 zing
+sarayu@LAPTOP-BIAO0RTG:~$ pwd
+/home/sarayu
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    odd.sh          tempy
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd2.sh         user1
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   outputfile.txt  whiledemo.sh
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  state.sh        zing
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myinfo.txt     temp
+asdrole   data.sh           hobesdir     meera            nano.save      temp1
+sarayu@LAPTOP-BIAO0RTG:~$ file outputfile.txt
+outputfile.txt: ASCII text
+sarayu@LAPTOP-BIAO0RTG:~$ ls -a
+.              .motd_shown                asdrole           fordemo.sh       meera          outputfile.txt
+..             .profile                   athulya           frnds.sh         multiarg.sh    state.sh
+.ansible       .python_history            athulya1          hello.sh         multiple.sh    temp
+.bash_history  .sudo_as_admin_successful  athulya_playbook  hobesdir         mycommand.sh   temp1
+.bash_logout   AbcImpex                   bash_alise        ifelse.sh        mycommands.sh  tempy
+.bashrc        Hashmum                    bootcamp          input.sh         myinfo.txt     user1
+.config        abc.yml                    data.sh           install-tomcat   nano.save      whiledemo.sh
+.landscape     args.sh                    datafile.sh       krishna          odd.sh         zing
+.local         asd.yml                    food.sh           linux_tweet_app  odd2.sh
+sarayu@LAPTOP-BIAO0RTG:~$ ls -l
+total 0
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 17 14:56 AbcImpex
+drwxr-xr-x 1 sarayu sarayu 4096 Jan  5 16:39 Hashmum
+-rw-r--r-- 1 sarayu sarayu   89 Dec 16 10:58 abc.yml
+-rwxrwxr-- 1 sarayu sarayu  182 Dec 20 15:14 args.sh
+-rw-r--r-- 1 sarayu sarayu  120 Dec 15 17:56 asd.yml
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 15 17:58 asdrole
+drwxr-xr-x 1 sarayu sarayu 4096 Jan  8 17:06 athulya
+drwxr-xr-x 1 sarayu sarayu 4096 Dec  1 17:38 athulya1
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 16 15:37 athulya_playbook
+-rw-r--r-- 1 sarayu sarayu   31 Dec 10 15:47 bash_alise
+drwxrwxr-x 1 sarayu sarayu 4096 Dec 20 16:48 bootcamp
+-rwxrwxr-- 1 sarayu sarayu  123 Dec 13 15:04 data.sh
+-rwxrwxr-- 1 sarayu sarayu   42 Dec 13 13:35 datafile.sh
+-rwxrwxr-- 1 sarayu sarayu  313 Dec 13 15:26 food.sh
+-rwxrwxr-- 1 sarayu sarayu   13 Dec 13 12:08 fordemo.sh
+-rwxrwxr-- 1 sarayu sarayu  163 Dec 13 15:40 frnds.sh
+-rwxrwxr-- 1 sarayu sarayu  142 Dec 13 10:20 hello.sh
+drwxr-xr-x 1 sarayu sarayu 4096 Dec  2 09:10 hobesdir
+-rwxrwxr-- 1 sarayu sarayu  128 Dec 20 15:38 ifelse.sh
+-rwxrwxr-- 1 sarayu sarayu   99 Dec 20 15:22 input.sh
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 16 12:07 install-tomcat
+drwxr-xr-x 1 sarayu sarayu 4096 Dec  7 15:44 krishna
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 21 14:10 linux_tweet_app
+drwxrwxr-x 1 sarayu sarayu 4096 Jan  8 17:07 meera
+-rwxrwxr-- 1 sarayu sarayu  149 Dec 13 17:33 multiarg.sh
+-rwxrwxr-- 1 sarayu sarayu  133 Dec 13 15:31 multiple.sh
+-rw-r--r-- 1 sarayu sarayu   17 Dec 10 17:27 mycommand.sh
+-rwxr-xr-x 1 sarayu sarayu    3 Dec 10 17:22 mycommands.sh
+-rw-r--rwx 1 sarayu sarayu   33 Dec 10 10:19 myinfo.txt
+-rw------- 1 sarayu sarayu    3 Dec 10 17:20 nano.save
+-rwxrwxr-- 1 sarayu sarayu  140 Dec 13 15:11 odd.sh
+-rwxrwxr-- 1 sarayu sarayu  230 Dec 13 15:46 odd2.sh
+-rw-r--r-- 1 sarayu sarayu  385 Jan 20 12:06 outputfile.txt
+-rw-r--r-- 1 sarayu sarayu   40 Dec 13 13:24 state.sh
+drwxr-xr-x 1 sarayu sarayu 4096 Jan 20 12:27 temp
+drwxrwxr-x 1 sarayu sarayu 4096 Dec 20 16:42 temp1
+drwxr-xr-x 1 sarayu sarayu 4096 Dec  1 12:18 tempy
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 28 17:23 user1
+-rwxrwxr-- 1 sarayu sarayu  125 Dec 13 12:18 whiledemo.sh
+drwxr-xr-x 1 sarayu sarayu 4096 Dec 28 17:34 zing
+sarayu@LAPTOP-BIAO0RTG:~$ chmod o-w outputfile.txt
+sarayu@LAPTOP-BIAO0RTG:~$ ls -lh outputfile.txt
+-rw-r--r-- 1 sarayu sarayu 385 Jan 20 12:06 outputfile.txt
+sarayu@LAPTOP-BIAO0RTG:~$ ls -alh | grep temp
+drwxr-xr-x 1 sarayu sarayu 4.0K Jan 20 12:27 temp
+drwxrwxr-x 1 sarayu sarayu 4.0K Dec 20 16:42 temp1
+drwxr-xr-x 1 sarayu sarayu 4.0K Dec  1 12:18 tempy
+sarayu@LAPTOP-BIAO0RTG:~$ touch myemptfile
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    nano.save       temp1
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd.sh          tempy
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   odd2.sh         user1
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  outputfile.txt  whiledemo.sh
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myemptfile     state.sh        zing
+asdrole   data.sh           hobesdir     meera            myinfo.txt     temp
+sarayu@LAPTOP-BIAO0RTG:~$ cat myempfile
+cat: myempfile: No such file or directory
+sarayu@LAPTOP-BIAO0RTG:~$ cat myemptfile
+sarayu@LAPTOP-BIAO0RTG:~$ ls -alh myemptfile
+-rw-rw-r-- 1 sarayu sarayu 0 Jan 20 12:48 myemptfile
+sarayu@LAPTOP-BIAO0RTG:~$ nano fsam.txt
+sarayu@LAPTOP-BIAO0RTG:~$ cat fsam.txt
+devops
+development
+operations
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  hobesdir         meera          myinfo.txt      temp
+Hashmum   athulya1          food.sh      ifelse.sh        multiarg.sh    nano.save       temp1
+abc.yml   athulya_playbook  fordemo.sh   input.sh         multiple.sh    odd.sh          tempy
+args.sh   bash_alise        frnds.sh     install-tomcat   mycommand.sh   odd2.sh         user1
+asd.yml   bootcamp          fsam.txt     krishna          mycommands.sh  outputfile.txt  whiledemo.sh
+asdrole   data.sh           hello.sh     linux_tweet_app  myemptfile     state.sh        zing
+sarayu@LAPTOP-BIAO0RTG:~$ rm fsam.txt
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    nano.save       temp1
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd.sh          tempy
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   odd2.sh         user1
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  outputfile.txt  whiledemo.sh
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myemptfile     state.sh        zing
+asdrole   data.sh           hobesdir     meera            myinfo.txt     temp
+
+sarayu@LAPTOP-BIAO0RTG:~$ find . -type d -name "t*"
+./.ansible/tmp
+./asdrole/tasks
+./asdrole/templates
+./asdrole/tests
+./athulya/tasks
+./athulya/templates
+./athulya/tests
+./athulya_playbook/install-tomcat/tasks
+./athulya_playbook/install-tomcat/templates
+./athulya_playbook/install-tomcat/tests
+./athulya_playbook/start-tomcat/tasks
+./athulya_playbook/start-tomcat/templates
+./athulya_playbook/start-tomcat/tests
+./install-tomcat/tasks
+./install-tomcat/templates
+./install-tomcat/tests
+./linux_tweet_app/.git/refs/tags
+./meera/tasks
+./meera/templates
+./meera/tests
+./temp
+./temp1
+./tempy
+sarayu@LAPTOP-BIAO0RTG:~$ find . -type d -name "."
+.
+sarayu@LAPTOP-BIAO0RTG:~$ find . -type d -name "t"
+sarayu@LAPTOP-BIAO0RTG:~$ find . -type d
+.
+./.ansible
+./.ansible/galaxy_cache
+./.ansible/tmp
+./.config
+./.config/procps
+./.landscape
+./.local
+./.local/share
+./.local/share/nano
+./AbcImpex
+./asdrole
+./asdrole/defaults
+./asdrole/files
+./asdrole/handlers
+./asdrole/meta
+./asdrole/tasks
+./asdrole/templates
+./asdrole/tests
+./asdrole/vars
+./athulya
+./athulya/defaults
+./athulya/dirxyz
+./athulya/dirxyz/folder1
+./athulya/dirxyz/folder1/infolder
+./athulya/files
+./athulya/folder1
+./athulya/folder1/infolder
+./athulya/handlers
+./athulya/hobesdir
+./athulya/hobesdir1
+./athulya/meta
+./athulya/tasks
+./athulya/templates
+./athulya/tests
+./athulya/vars
+./athulya1
+./athulya1/dirxyz
+./athulya1/dirxyz/pfolder
+./athulya1/dirxyz/pfolder/cfolder
+./athulya1/hobes
+./athulya1/hobsdir
+./athulya_playbook
+./athulya_playbook/install-tomcat
+./athulya_playbook/install-tomcat/defaults
+./athulya_playbook/install-tomcat/files
+./athulya_playbook/install-tomcat/handlers
+./athulya_playbook/install-tomcat/meta
+./athulya_playbook/install-tomcat/tasks
+./athulya_playbook/install-tomcat/templates
+./athulya_playbook/install-tomcat/tests
+./athulya_playbook/install-tomcat/vars
+./athulya_playbook/start-tomcat
+./athulya_playbook/start-tomcat/defaults
+./athulya_playbook/start-tomcat/files
+./athulya_playbook/start-tomcat/handlers
+./athulya_playbook/start-tomcat/meta
+./athulya_playbook/start-tomcat/tasks
+./athulya_playbook/start-tomcat/templates
+./athulya_playbook/start-tomcat/tests
+./athulya_playbook/start-tomcat/vars
+./bootcamp
+./Hashmum
+./hobesdir
+./install-tomcat
+./install-tomcat/defaults
+./install-tomcat/files
+./install-tomcat/handlers
+./install-tomcat/meta
+./install-tomcat/tasks
+./install-tomcat/templates
+./install-tomcat/tests
+./install-tomcat/vars
+./krishna
+./linux_tweet_app
+./linux_tweet_app/.git
+./linux_tweet_app/.git/branches
+./linux_tweet_app/.git/hooks
+./linux_tweet_app/.git/info
+./linux_tweet_app/.git/logs
+./linux_tweet_app/.git/logs/refs
+./linux_tweet_app/.git/logs/refs/heads
+./linux_tweet_app/.git/logs/refs/remotes
+./linux_tweet_app/.git/logs/refs/remotes/origin
+./linux_tweet_app/.git/objects
+./linux_tweet_app/.git/objects/3b
+./linux_tweet_app/.git/objects/3d
+./linux_tweet_app/.git/objects/63
+./linux_tweet_app/.git/objects/65
+./linux_tweet_app/.git/objects/76
+./linux_tweet_app/.git/objects/77
+./linux_tweet_app/.git/objects/86
+./linux_tweet_app/.git/objects/92
+./linux_tweet_app/.git/objects/9d
+./linux_tweet_app/.git/objects/a7
+./linux_tweet_app/.git/objects/ae
+./linux_tweet_app/.git/objects/d5
+./linux_tweet_app/.git/objects/d9
+./linux_tweet_app/.git/objects/f3
+./linux_tweet_app/.git/objects/info
+./linux_tweet_app/.git/objects/pack
+./linux_tweet_app/.git/refs
+./linux_tweet_app/.git/refs/heads
+./linux_tweet_app/.git/refs/remotes
+./linux_tweet_app/.git/refs/remotes/origin
+./linux_tweet_app/.git/refs/tags
+./meera
+./meera/defaults
+./meera/files
+./meera/handlers
+./meera/meta
+./meera/tasks
+./meera/templates
+./meera/tests
+./meera/vars
+./temp
+./temp/abdtutor
+./temp/abdtutor/dir1
+./temp/abdtutor/dir2
+./temp/folder1
+./temp/folder1/infolder
+./temp1
+./tempy
+./tempy/dir1
+./tempy/dir2
+./user1
+./zing
+sarayu@LAPTOP-BIAO0RTG:~$ find . -type b
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    nano.save       temp1
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd.sh          tempy
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   odd2.sh         user1
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  outputfile.txt  whiledemo.sh
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myemptfile     state.sh        zing
+asdrole   data.sh           hobesdir     meera            myinfo.txt     temp
+sarayu@LAPTOP-BIAO0RTG:~$ find . -name myemptfile -delete
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    odd.sh          tempy
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd2.sh         user1
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   outputfile.txt  whiledemo.sh
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  state.sh        zing
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myinfo.txt     temp
+asdrole   data.sh           hobesdir     meera            nano.save      temp1
+sarayu@LAPTOP-BIAO0RTG:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:        6203624     5755128      219144       17720      229352      314764
+Swap:      18874368     1597084    17277284
+sarayu@LAPTOP-BIAO0RTG:~$ uptime
+ 13:29:03 up  1:48,  0 users,  load average: 0.52, 0.58, 0.59
+sarayu@LAPTOP-BIAO0RTG:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+rootfs         249246716 113825168 135421548  46% /
+none           249246716 113825168 135421548  46% /dev
+none           249246716 113825168 135421548  46% /run
+none           249246716 113825168 135421548  46% /run/lock
+none           249246716 113825168 135421548  46% /run/shm
+none           249246716 113825168 135421548  46% /run/user
+tmpfs          249246716 113825168 135421548  46% /sys/fs/cgroup
+C:\            249246716 113825168 135421548  46% /mnt/c
+D:\            976760828   9454660 967306168   1% /mnt/d
+sarayu@LAPTOP-BIAO0RTG:~$ env
+SHELL=/bin/bash
+PWD=/home/sarayu
+LOGNAME=sarayu
+HOME=/home/sarayu
+LANG=C.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LESSCLOSE=/usr/bin/lesspipe %s %s
+TERM=xterm-256color
+LESSOPEN=| /usr/bin/lesspipe %s
+USER=sarayu
+SHLVL=1
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+MAIL=/var/mail/sarayu
+_=/usr/bin/env
+sarayu@LAPTOP-BIAO0RTG:~$ info
+sarayu@LAPTOP-BIAO0RTG:~$ ps
+  PID TTY          TIME CMD
+  105 tty1     00:00:00 bash
+  286 tty1     00:00:00 bash
+  352 tty1     00:00:00 ps
+sarayu@LAPTOP-BIAO0RTG:~$ last
+
+wtmp begins Tue Nov 30 15:47:44 2021
+sarayu@LAPTOP-BIAO0RTG:~$ top
+top - 13:39:23 up  1:58,  0 users,  load average: 0.52, 0.58, 0.59
+Tasks:   8 total,   1 running,   7 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  7.5 us, 54.9 sy,  0.0 ni, 36.5 id,  0.0 wa,  1.1 hi,  0.0 si,  0.0 st
+MiB Mem :   6058.2 total,     31.3 free,   5802.9 used,    224.0 buff/cache
+MiB Swap:  18432.0 total,  16919.2 free,   1512.8 used.    124.7 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    1 root      20   0    8944    124    104 S   0.0   0.0   0:00.25 init
+  104 root      20   0    8944    128     84 S   0.0   0.0   0:00.00 init
+  105 sarayu    20   0   18212    152    148 S   0.0   0.0   0:00.93 bash
+  221 root      20   0   18412    132    132 S   0.0   0.0   0:00.09 su
+  222 nila      20   0   18076    136    136 S   0.0   0.0   0:00.18 bash
+  285 root      20   0   18412    132    108 S   0.0   0.0   0:00.05 su
+  286 sarayu    20   0   18176    152    128 S   0.0   0.0   0:01.01 bash
+  354 sarayu    20   0   18920   1016    600 R   0.0   0.0   0:00.07 top
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sarayu@LAPTOP-BIAO0RTG:~$ htop
+sarayu@LAPTOP-BIAO0RTG:~$ htop
+
+
+

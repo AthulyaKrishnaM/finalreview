@@ -1,0 +1,224 @@
+sarayu@LAPTOP-BIAO0RTG:~$ ansible --version
+ansible [core 2.11.7]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/sarayu/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/sarayu/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+sarayu@LAPTOP-BIAO0RTG:~$ ansible-galaxy init --force --offline sarayurole
+- Role sarayurole was created successfully
+sarayu@LAPTOP-BIAO0RTG:~$ tree sarayurole/
+sarayurole/
+├── README.md
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── tasks
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
+
+8 directories, 8 files
+sarayu@LAPTOP-BIAO0RTG:~$ cd \sarayurole
+sarayu@LAPTOP-BIAO0RTG:~/sarayurole$ ls
+README.md  defaults  files  handlers  meta  tasks  templates  tests  vars
+sarayu@LAPTOP-BIAO0RTG:~/sarayurole$ cd
+sarayu@LAPTOP-BIAO0RTG:~$ ls
+AbcImpex  athulya           datafile.sh  ifelse.sh        multiarg.sh    odd.sh          temp1
+Hashmum   athulya1          food.sh      input.sh         multiple.sh    odd2.sh         tempy
+abc.yml   athulya_playbook  fordemo.sh   install-tomcat   mycommand.sh   outputfile.txt  user1
+args.sh   bash_alise        frnds.sh     krishna          mycommands.sh  sarayurole      whiledemo.sh
+asd.yml   bootcamp          hello.sh     linux_tweet_app  myinfo.txt     state.sh        zing
+asdrole   data.sh           hobesdir     meera            nano.save      temp
+sarayu@LAPTOP-BIAO0RTG:~$ cd athulya_playbook
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ ls
+athulya_orchestrate.yml  install-tomcat  start-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ nano athulya_orchestrate.yml
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ ./athulya_orchestrate.yml
+-bash: ./athulya_orchestrate.yml: Permission denied
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cd install-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ ls
+README.md  defaults  files  handlers  meta  tasks  templates  tests  vars
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd start-tomcat
+-bash: cd: start-tomcat: No such file or directory
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cd start-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat$ ls
+README.md  defaults  files  handlers  meta  tasks  templates  tests  vars
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ tree install-tomcat/
+install-tomcat/
+├── README.md
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── tasks
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
+
+8 directories, 8 files
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cd install-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd task
+-bash: cd: task: No such file or directory
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd tasks
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat/tasks$ nano main.yml
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat/tasks$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cd start-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat$ cd tasks
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat/tasks$ nano main.yml
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat/tasks$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ ls
+athulya_orchestrate.yml  install-tomcat  start-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cat athulya_orchestrate.yml
+---
+- hosts: tomcat-node
+- roles:
+    - {role: install-tomact}
+    - {role: start-tomcat}
+
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cd install-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd tasks
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat/tasks$ cat main.yaml
+cat: main.yaml: No such file or directory
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat/tasks$ cat main.yml
+---
+# tasks file for install-tomcat
+-
+ block:
+  -name:install Tomcat artifacts
+   action:>
+     yum name= "demo-tomcat-1" state = present
+   register:Output
+
+ always:
+  -debug:
+    msg:
+     -"install Tomcat artifacts task ended with message:{{Output}}
+     -"install Tomcat atrifacts-{{Output.changed}}"
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat/tasks$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/install-tomcat$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ cd start-tomcat
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat$ cd tasks
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat/tasks$ cat main.yml
+---
+# tasks file for start-tomcat
+-
+ block:
+    -name:Start Tomcat
+    command:<path of tomcat>/bin/startup.sh"
+    register:output
+    become:true
+
+
+ always:
+    -debug:
+      msg:
+       -"Start Tomcattas ended with message:{{output}}"
+       -"Tomcat started-{{output.changed}}"
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat/tasks$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook/start-tomcat$ cd ..
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ sudo ansible-playbook -i hosts athulya-orchestrate.yml -vvv
+[sudo] password for sarayu:
+ansible-playbook [core 2.11.7]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+Using /etc/ansible/ansible.cfg as config file
+ERROR! the playbook: athulya-orchestrate.yml could not be found
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ sudo ansible-playbook -i hosts athulya_orchestrate.yml -vvv
+ansible-playbook [core 2.11.7]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+script declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+auto declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+yaml declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+ini declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+toml declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+[WARNING]: Unable to parse /home/sarayu/athulya_playbook/hosts as an inventory source
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+not match 'all'
+ERROR! the role 'install-tomact' was not found in /home/sarayu/athulya_playbook/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/sarayu/athulya_playbook
+
+The error appears to be in '/home/sarayu/athulya_playbook/athulya_orchestrate.yml': line 4, column 7, but maybe elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- roles:
+    - {role: install-tomact}
+      ^ here
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ nano athulya_orchestrate.yml
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$ sudo ansible-playbook -i hosts athulya_orchestrate.yml -vvv
+ansible-playbook [core 2.11.7]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+Using /etc/ansible/ansible.cfg as config file
+host_list declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+script declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+auto declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+yaml declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+ini declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+Skipping due to inventory source not existing or not being readable by the current user
+toml declined parsing /home/sarayu/athulya_playbook/hosts as it did not pass its verify_file() method
+[WARNING]: Unable to parse /home/sarayu/athulya_playbook/hosts as an inventory source
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does
+not match 'all'
+ERROR! the role 'install-tomact' was not found in /home/sarayu/athulya_playbook/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/sarayu/athulya_playbook
+
+The error appears to be in '/home/sarayu/athulya_playbook/athulya_orchestrate.yml': line 4, column 7, but maybe elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- roles:
+    - { role: install-tomact}
+      ^ here
+sarayu@LAPTOP-BIAO0RTG:~/athulya_playbook$

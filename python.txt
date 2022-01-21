@@ -1,0 +1,64 @@
+sarayu@LAPTOP-BIAO0RTG:~$ python3
+Python 3.8.10 (default, Jun  2 2021, 10:49:15)
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> from math import*
+>>> a=pi
+>>> print(a)
+3.141592653589793
+>>> print(sqrt(64))
+8.0
+>>> print(pow(6,4))
+1296.0
+>>> print(round(89.678))
+90
+>>> print(floor(990.999))
+990
+>>> print(ceil(90.0001))
+91
+>>> def highestnumber(no,no1):
+...   if(no>no1):
+...       print(no,'largest')
+...   else:
+...       print(no1,'gretest')
+...
+
+>>> highestnumber(10,99)
+99 gretest
+>>> def prime(n,m):
+...  for i in range(n,m):
+...      for j in range(2,i):
+...          if((i%j)==0):
+...              break
+...      else:
+...         print(i)
+...
+>>> prime(3,17)
+3
+5
+7
+11
+13
+>>> class student:
+...   def setstudent(self,id,name,course):
+...       self.id=id
+...       self.name=name
+...       self.course=course
+...   def getstudent(self):
+...       print(self.id," ",self.name," ",self.course)
+...
+>>> std = student()
+>>> std.setstudent(123,"athulya","python")
+>>> std.getstudent()
+123   athulya   python
+>>>
+
+>>> name="Athulya"
+>>> no=890
+>>> city="Calicut"
+>>> print("name is"+name+"city:"+city+"and No:"+str(no))
+name isAthulyacity:Calicutand No:890
+>>> print("name is "+name+" city: "+city+" and No:"+str(no))
+name is Athulya city: Calicut and No:890
+>>> exit()

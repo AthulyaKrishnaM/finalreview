@@ -1,0 +1,1473 @@
+
+Navigate to pod.yaml
+---------------------
+PS C:\Users> cd HP\OneDrive\Desktop\kubernets
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl apply -f pod.yaml
+pod/demo created
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl get pods
+NAME   READY   STATUS    RESTARTS   AGE
+demo   1/1     Running   0          12s
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl logs demo
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=37 time=30.683 ms
+64 bytes from 8.8.8.8: seq=1 ttl=37 time=25.269 ms
+64 bytes from 8.8.8.8: seq=2 ttl=37 time=25.463 ms
+64 bytes from 8.8.8.8: seq=3 ttl=37 time=25.459 ms
+64 bytes from 8.8.8.8: seq=4 ttl=37 time=26.976 ms
+64 bytes from 8.8.8.8: seq=5 ttl=37 time=25.010 ms
+64 bytes from 8.8.8.8: seq=6 ttl=37 time=24.628 ms
+64 bytes from 8.8.8.8: seq=7 ttl=37 time=25.070 ms
+64 bytes from 8.8.8.8: seq=8 ttl=37 time=24.920 ms
+64 bytes from 8.8.8.8: seq=9 ttl=37 time=25.093 ms
+64 bytes from 8.8.8.8: seq=10 ttl=37 time=25.960 ms
+64 bytes from 8.8.8.8: seq=11 ttl=37 time=24.437 ms
+64 bytes from 8.8.8.8: seq=12 ttl=37 time=26.875 ms
+64 bytes from 8.8.8.8: seq=13 ttl=37 time=24.599 ms
+64 bytes from 8.8.8.8: seq=14 ttl=37 time=24.942 ms
+64 bytes from 8.8.8.8: seq=15 ttl=37 time=24.795 ms
+64 bytes from 8.8.8.8: seq=16 ttl=37 time=26.958 ms
+64 bytes from 8.8.8.8: seq=17 ttl=37 time=24.682 ms
+64 bytes from 8.8.8.8: seq=18 ttl=37 time=27.858 ms
+64 bytes from 8.8.8.8: seq=19 ttl=37 time=25.669 ms
+64 bytes from 8.8.8.8: seq=20 ttl=37 time=25.595 ms
+64 bytes from 8.8.8.8: seq=21 ttl=37 time=25.567 ms
+64 bytes from 8.8.8.8: seq=22 ttl=37 time=26.007 ms
+64 bytes from 8.8.8.8: seq=23 ttl=37 time=25.595 ms
+64 bytes from 8.8.8.8: seq=24 ttl=37 time=25.540 ms
+64 bytes from 8.8.8.8: seq=25 ttl=37 time=25.039 ms
+64 bytes from 8.8.8.8: seq=26 ttl=37 time=25.135 ms
+64 bytes from 8.8.8.8: seq=27 ttl=37 time=25.075 ms
+64 bytes from 8.8.8.8: seq=28 ttl=37 time=30.378 ms
+64 bytes from 8.8.8.8: seq=29 ttl=37 time=25.181 ms
+64 bytes from 8.8.8.8: seq=30 ttl=37 time=24.878 ms
+64 bytes from 8.8.8.8: seq=31 ttl=37 time=24.617 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+1/1: preparing
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl delete -f pod.yaml
+pod "demo" deleted
+----------------------------------------------------------------------------------
+Enable Docker Swarm
+-------------------------
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker swarm init
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker swarm join --token
+flag needs an argument: --token
+See 'docker swarm join --help'.
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service create --name demo alpine:3.5 ping 8.8.8.8
+overall progress: 0 out of 1 tasks
+overall progress: 1 out of 1 tasks
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+ID             NAME      IMAGE        NODE             DESIRED STATE   CURRENT STATE                ERoverall progress: 0 out of 1 tasks
+6usz3373zukh   demo.1    alpine:3.5   docker-desktop   Running         Running about a minute ago
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | PING 8.8.8.8 (8.8.8.8): 56 data bytes
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=0 ttl=37 time=29.534 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=1 ttl=37 time=25.418 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=3 ttl=37 time=27.351 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=4 ttl=37 time=24.842 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=6 ttl=37 time=26.218 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=8 ttl=37 time=25.736 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=9 ttl=37 time=24.884 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=10 ttl=37 time=27.967 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=11 ttl=37 time=28.161 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=12 ttl=37 time=25.315 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=13 ttl=37 time=24.721 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=15 ttl=37 time=30.128 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=16 ttl=37 time=28.225 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=21 ttl=37 time=117.016 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=22 ttl=37 time=24.849 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=23 ttl=37 time=27.233 ms
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=27 ttl=37 time=24.969 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=28 ttl=37 time=26.209 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=33 ttl=37 time=132.533 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=35 ttl=37 time=25.983 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=36 ttl=37 time=31.363 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=37 ttl=37 time=25.732 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=38 ttl=37 time=26.754 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=39 ttl=37 time=25.322 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=40 ttl=37 time=26.192 ms
+overall progress: 0 out of 1 tasks
+1/1: assigned
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=45 ttl=37 time=25.381 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=47 ttl=37 time=176.605 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=48 ttl=37 time=25.207 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=49 ttl=37 time=27.273 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=54 ttl=37 time=25.156 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=55 ttl=37 time=25.274 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=56 ttl=37 time=24.336 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=61 ttl=37 time=25.824 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=64 ttl=37 time=164.615 ms
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=66 ttl=37 time=25.577 ms
+1/1: preparing
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=73 ttl=37 time=25.306 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=75 ttl=37 time=25.435 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=76 ttl=37 time=25.790 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=79 ttl=37 time=110.392 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=85 ttl=37 time=26.718 ms
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=88 ttl=37 time=27.448 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=89 ttl=37 time=25.471 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=90 ttl=37 time=25.464 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=91 ttl=37 time=25.681 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=92 ttl=37 time=25.390 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=93 ttl=37 time=23.922 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=94 ttl=37 time=25.238 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: assigned
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=99 ttl=37 time=61.183 ms
+1/1: pending
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=101 ttl=37 time=26.718 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=102 ttl=37 time=24.981 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=103 ttl=37 time=32.323 ms
+overall progress: 0 out of 1 tasks
+1/1: assigned
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=106 ttl=37 time=252.795 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=107 ttl=37 time=24.686 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=108 ttl=37 time=25.617 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=109 ttl=37 time=25.959 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=110 ttl=37 time=25.290 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=111 ttl=37 time=26.512 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=112 ttl=37 time=25.412 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=116 ttl=37 time=25.436 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=117 ttl=37 time=25.738 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=118 ttl=37 time=25.268 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=120 ttl=37 time=54.858 ms
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service rm demo
+demo
+------------------------------------------------------------------------------------
+Deploy to Kubernets
+-------------------------------------
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl apply -f bb.yaml
+deployment.apps/bb-demo created
+overall progress: 0 out of 1 tasks
+1/1: preparing
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+bb-demo   0/1     1            0           23s
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl get services
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+service "bb-entrypoint" deleted
+1/1: preparing
+CONTAINER ID   IMAGE                              COMMAND                  CREATED             STATUS             PORTS                    NAMES
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   About an hour ago   Up About an hour   0.0.0.0:8000->8000/tcp   getting-started-master-docs-1
+30a79c4be7d6   node:12-alpine                     "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:3000->3000/tcp   suspicious_goldberg
+overall progress: 0 out of 1 tasks
+1/1: preparing
+abbd0ab2e083   mysql:5.7                          "docker-entrypoint.s…"   2 hours ago         Up 2 hooverall progress: 0 out of 1 tasks
+e6e84e42fe58   getting-started                    "docker-entrypoint.s…"   11 hours ago        Up 11 h1/1: preparing
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   18 hours ago        Up 18 hours                                 stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   18 hours ago        Up 18 hoverall progress: 0 out of 1 tasks
+db34dff7ef57   redis                              "docker-entrypoint.s…"   19 hours ago        Up 19 hours        6379/tcp                 clever_easley
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+ours        9090/tcp                 my-prometheus4.1.ri4rbjmt0uudvm2ponrej4fsc
+c5b7cb94528b   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago        Up 20 hours        9090/tcp                 my-prometheus5.1.lyiu2ec7abxldypljdu4sdtdi
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+its digest. Each node will access bulletinboard:1.0 independently,
+possibly leading to different nodes running different
+versions of the image.
+overall progress: 0 out of 1 tasks
+1/1: preparing
+ID             NAME             MODE         REPLICAS   IMAGE                    PORTS
+overall progress: 0 out of 1 tasks
+n1kdi2y6ez27   my-prometheus    replicated   0/1        prom/prometheus:latest   *:9090->9090/tcp
+ctxtigvv7gkk   my-prometheus1   replicated   0/1        prom/prometheus:latest   *:9091->9091/tcp
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+lmq8zq99ny2m   my-prometheus5   replicated   1/1        prom/prometheus:latest   *:9095->9095/tcp
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack deploy -c bb-stack.yaml demo
+Updating service demo_bb-app (id: 2ewjmursmd6w1gozg06sn6h4h)
+overall progress: 0 out of 1 tasks
+its digest. Each node will access bulletinboard:1.0 independently,
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service ls
+ID             NAME             MODE         REPLICAS   IMAGE                    PORTS
+2ewjmursmd6w   demo_bb-app      replicated   0/1        bulletinboard:1.0        *:3000->3030/tcp
+n1kdi2y6ez27   my-prometheus    replicated   0/1        prom/prometheus:latest   *:9090->9090/tcp
+overall progress: 0 out of 1 tasks
+xwdv2zzbdf0f   my-prometheus2   replicated   0/1        prom/prometheus:latest   *:9092->9092/tcp
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: assigned
+--------------------------------------------------------------------------------------------------------
+
+Deploy to Swarm
+--------------------------------------
+
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack deploy -c bb-stack.yaml demo
+Updating service demo_bb-app (id: 2ewjmursmd6w1gozg06sn6h4h)
+image bulletinboard:1.0 could not be accessed on a registry to record
+its digest. Each node will access bulletinboard:1.0 independently,
+overall progress: 0 out of 1 tasks
+1/1: preparing
+
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack rm demo
+Removing service demo_bb-app
+Removing network demo_default
+--------------------------------------------------------------------------------------------------------------
+
+Collect docker metrices with promethus
+---------------------------------------------------
+
+PS C:\> docker ps
+CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS    1/1: preparing
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   17 minutes ago   Up 17 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+overall progress: 0 out of 1 tasks
+1/1: preparing
+20417a946272   prom/prometheus:latest             "/bin/prometheus --c…"   18 minutes ago   Up 18 minutes   9090/tcp                 my-prometheus5.1.ockma9i9m7ucf4geo7qqwrfhc
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   56 minutes ago   Up 56 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+      0.0.0.0:3001->3001/tcp   intelligent_brown
+abbd0ab2e083   mysql:5.7                          "docker-entrypoint.s…"   3 hours ago      Up 3 hours      3306/tcp, 33060/tcp      boring_hodgkin
+overall progress: 0 out of 1 tasks
+1/1: preparing
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   19 hours ago     Up 19 hours                              stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+      PORTS                    NAMES
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   19 minutes ago   Up 19 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+overall progress: 0 out of 1 tasks
+1/1: preparing
+20417a946272   prom/prometheus:latest             "/bin/prometheus --c…"   21 minutes ago   Up 20 minuoverall progress: 0 out of 1 tasks
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing [=================================>                 ]
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 hour1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+db34dff7ef57   redis                              "docker-entrypoint.s…"   21 hours ago     Up 21 hours     6379/tcp                 clever_easley
+PS C:\> docker service create --replicas 1 --name myy-promethus
+"docker service create" requires at least 1 argument.
+See 'docker service create --help'.
+
+Usage:  docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+>> type=bind,source=C:/tmp/promethus.yaml,destination=/etc/promethus/promethus.yaml `
+>> publish published=3000,target=3000,protocol=tcp `
+>> prom/promethus
+image publish:latest could not be accessed on a registry to record
+its digest. Each node will access publish:latest independently,
+possibly leading to different nodes running different
+versions of the image.
+
+x8fs3qxq61db97kta97r7hbvn
+overall progress: 0 out of 1 tasks
+1/1: preparing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users> cd HP\OneDrive\Desktop\kubernets
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl apply -f pod.yaml
+pod/demo created
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl get pods
+NAME   READY   STATUS    RESTARTS   AGE
+demo   1/1     Running   0          12s
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl logs demo
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=37 time=30.683 ms
+64 bytes from 8.8.8.8: seq=1 ttl=37 time=25.269 ms
+64 bytes from 8.8.8.8: seq=2 ttl=37 time=25.463 ms
+64 bytes from 8.8.8.8: seq=3 ttl=37 time=25.459 ms
+64 bytes from 8.8.8.8: seq=4 ttl=37 time=26.976 ms
+64 bytes from 8.8.8.8: seq=5 ttl=37 time=25.010 ms
+64 bytes from 8.8.8.8: seq=6 ttl=37 time=24.628 ms
+64 bytes from 8.8.8.8: seq=7 ttl=37 time=25.070 ms
+64 bytes from 8.8.8.8: seq=8 ttl=37 time=24.920 ms
+64 bytes from 8.8.8.8: seq=9 ttl=37 time=25.093 ms
+64 bytes from 8.8.8.8: seq=10 ttl=37 time=25.960 ms
+64 bytes from 8.8.8.8: seq=11 ttl=37 time=24.437 ms
+64 bytes from 8.8.8.8: seq=12 ttl=37 time=26.875 ms
+64 bytes from 8.8.8.8: seq=13 ttl=37 time=24.599 ms
+64 bytes from 8.8.8.8: seq=14 ttl=37 time=24.942 ms
+64 bytes from 8.8.8.8: seq=15 ttl=37 time=24.795 ms
+64 bytes from 8.8.8.8: seq=16 ttl=37 time=26.958 ms
+64 bytes from 8.8.8.8: seq=17 ttl=37 time=24.682 ms
+64 bytes from 8.8.8.8: seq=18 ttl=37 time=27.858 ms
+64 bytes from 8.8.8.8: seq=19 ttl=37 time=25.669 ms
+64 bytes from 8.8.8.8: seq=20 ttl=37 time=25.595 ms
+64 bytes from 8.8.8.8: seq=21 ttl=37 time=25.567 ms
+64 bytes from 8.8.8.8: seq=22 ttl=37 time=26.007 ms
+64 bytes from 8.8.8.8: seq=23 ttl=37 time=25.595 ms
+64 bytes from 8.8.8.8: seq=24 ttl=37 time=25.540 ms
+64 bytes from 8.8.8.8: seq=25 ttl=37 time=25.039 ms
+64 bytes from 8.8.8.8: seq=26 ttl=37 time=25.135 ms
+64 bytes from 8.8.8.8: seq=27 ttl=37 time=25.075 ms
+64 bytes from 8.8.8.8: seq=28 ttl=37 time=30.378 ms
+64 bytes from 8.8.8.8: seq=29 ttl=37 time=25.181 ms
+64 bytes from 8.8.8.8: seq=30 ttl=37 time=24.878 ms
+64 bytes from 8.8.8.8: seq=31 ttl=37 time=24.617 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+1/1: preparing
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl delete -f pod.yaml
+pod "demo" deleted
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker swarm init
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker swarm join --token
+flag needs an argument: --token
+See 'docker swarm join --help'.
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service create --name demo alpine:3.5 ping 8.8.8.8
+overall progress: 0 out of 1 tasks
+overall progress: 1 out of 1 tasks
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+ID             NAME      IMAGE        NODE             DESIRED STATE   CURRENT STATE                ERoverall progress: 0 out of 1 tasks
+6usz3373zukh   demo.1    alpine:3.5   docker-desktop   Running         Running about a minute ago
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | PING 8.8.8.8 (8.8.8.8): 56 data bytes
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=0 ttl=37 time=29.534 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=1 ttl=37 time=25.418 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=3 ttl=37 time=27.351 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=4 ttl=37 time=24.842 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=6 ttl=37 time=26.218 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=8 ttl=37 time=25.736 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=9 ttl=37 time=24.884 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=10 ttl=37 time=27.967 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=11 ttl=37 time=28.161 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=12 ttl=37 time=25.315 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=13 ttl=37 time=24.721 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=15 ttl=37 time=30.128 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=16 ttl=37 time=28.225 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=21 ttl=37 time=117.016 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=22 ttl=37 time=24.849 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=23 ttl=37 time=27.233 ms
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=27 ttl=37 time=24.969 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=28 ttl=37 time=26.209 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=33 ttl=37 time=132.533 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=35 ttl=37 time=25.983 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=36 ttl=37 time=31.363 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=37 ttl=37 time=25.732 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=38 ttl=37 time=26.754 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=39 ttl=37 time=25.322 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=40 ttl=37 time=26.192 ms
+overall progress: 0 out of 1 tasks
+1/1: assigned
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=45 ttl=37 time=25.381 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=47 ttl=37 time=176.605 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=48 ttl=37 time=25.207 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=49 ttl=37 time=27.273 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=54 ttl=37 time=25.156 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=55 ttl=37 time=25.274 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=56 ttl=37 time=24.336 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=61 ttl=37 time=25.824 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=64 ttl=37 time=164.615 ms
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=66 ttl=37 time=25.577 ms
+1/1: preparing
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=73 ttl=37 time=25.306 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=75 ttl=37 time=25.435 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=76 ttl=37 time=25.790 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=79 ttl=37 time=110.392 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=85 ttl=37 time=26.718 ms
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=88 ttl=37 time=27.448 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=89 ttl=37 time=25.471 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=90 ttl=37 time=25.464 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=91 ttl=37 time=25.681 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=92 ttl=37 time=25.390 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=93 ttl=37 time=23.922 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=94 ttl=37 time=25.238 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: assigned
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=99 ttl=37 time=61.183 ms
+1/1: pending
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=101 ttl=37 time=26.718 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=102 ttl=37 time=24.981 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=103 ttl=37 time=32.323 ms
+overall progress: 0 out of 1 tasks
+1/1: assigned
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=106 ttl=37 time=252.795 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=107 ttl=37 time=24.686 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=108 ttl=37 time=25.617 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=109 ttl=37 time=25.959 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=110 ttl=37 time=25.290 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=111 ttl=37 time=26.512 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=112 ttl=37 time=25.412 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=116 ttl=37 time=25.436 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=117 ttl=37 time=25.738 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=118 ttl=37 time=25.268 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=120 ttl=37 time=54.858 ms
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service rm demo
+demo
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl apply -f bb.yaml
+deployment.apps/bb-demo created
+overall progress: 0 out of 1 tasks
+1/1: preparing
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+bb-demo   0/1     1            0           23s
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl get services
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+service "bb-entrypoint" deleted
+1/1: preparing
+CONTAINER ID   IMAGE                              COMMAND                  CREATED             STATUS             PORTS                    NAMES
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   About an hour ago   Up About an hour   0.0.0.0:8000->8000/tcp   getting-started-master-docs-1
+30a79c4be7d6   node:12-alpine                     "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:3000->3000/tcp   suspicious_goldberg
+overall progress: 0 out of 1 tasks
+1/1: preparing
+abbd0ab2e083   mysql:5.7                          "docker-entrypoint.s…"   2 hours ago         Up 2 hooverall progress: 0 out of 1 tasks
+e6e84e42fe58   getting-started                    "docker-entrypoint.s…"   11 hours ago        Up 11 h1/1: preparing
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   18 hours ago        Up 18 hours                                 stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   18 hours ago        Up 18 hoverall progress: 0 out of 1 tasks
+db34dff7ef57   redis                              "docker-entrypoint.s…"   19 hours ago        Up 19 hours        6379/tcp                 clever_easley
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+ours        9090/tcp                 my-prometheus4.1.ri4rbjmt0uudvm2ponrej4fsc
+c5b7cb94528b   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago        Up 20 hours        9090/tcp                 my-prometheus5.1.lyiu2ec7abxldypljdu4sdtdi
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+its digest. Each node will access bulletinboard:1.0 independently,
+possibly leading to different nodes running different
+versions of the image.
+overall progress: 0 out of 1 tasks
+1/1: preparing
+ID             NAME             MODE         REPLICAS   IMAGE                    PORTS
+overall progress: 0 out of 1 tasks
+n1kdi2y6ez27   my-prometheus    replicated   0/1        prom/prometheus:latest   *:9090->9090/tcp
+ctxtigvv7gkk   my-prometheus1   replicated   0/1        prom/prometheus:latest   *:9091->9091/tcp
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+lmq8zq99ny2m   my-prometheus5   replicated   1/1        prom/prometheus:latest   *:9095->9095/tcp
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack deploy -c bb-stack.yaml demo
+Updating service demo_bb-app (id: 2ewjmursmd6w1gozg06sn6h4h)
+overall progress: 0 out of 1 tasks
+its digest. Each node will access bulletinboard:1.0 independently,
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service ls
+ID             NAME             MODE         REPLICAS   IMAGE                    PORTS
+2ewjmursmd6w   demo_bb-app      replicated   0/1        bulletinboard:1.0        *:3000->3030/tcp
+n1kdi2y6ez27   my-prometheus    replicated   0/1        prom/prometheus:latest   *:9090->9090/tcp
+overall progress: 0 out of 1 tasks
+xwdv2zzbdf0f   my-prometheus2   replicated   0/1        prom/prometheus:latest   *:9092->9092/tcp
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: assigned
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack deploy -c bb-stack.yaml demo
+Updating service demo_bb-app (id: 2ewjmursmd6w1gozg06sn6h4h)
+image bulletinboard:1.0 could not be accessed on a registry to record
+its digest. Each node will access bulletinboard:1.0 independently,
+overall progress: 0 out of 1 tasks
+1/1: preparing
+
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack rm demo
+Removing service demo_bb-app
+Removing network demo_default
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   36 minutes ago   Up 36 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours      0.0.0.0:8000->8000/tcp   getting-started-master-docs-1
+5c179ddf3e6c   node:12-alpine                     "docker-entrypoint.s…"   2 hours ago      Up 2 hours      0.0.0.0:3001->3001/tcp   intelligent_brown
+overall progress: 0 out of 1 tasks
+1/1: preparing
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 hours     0.0.0.0:3002->3002/tcp   jovial_tereshkova
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   19 hours ago     Up 19 hours                              stoic_solomon
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: preparing
+s     9090/tcp                 my-prometheus3.1.iuxivrh782b8izj0om9dxhh0n
+e852b59c96aa   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago     Up 20 hours     9090/tcp                 my-prometheus4.1.ri4rbjmt0uudvm2ponrej4fsc
+c5b7cb94528b   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago     Up 20 houroverall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+c5b7cb94528b
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker rm -f e852b59c96aa
+e852b59c96aa
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker rm -f e852b59c96aa
+overall progress: 0 out of 1 tasks
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker rm -f d546f4316a95
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: assigned
+1/1: preparing
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   12 minutes ago   Up 12 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+812f2299692a   prom/prometheus:latest             "/bin/prometheus --c…"   13 minutes ago   Up 13 minuoverall progress: 0 out of 1 tasks
+1/1: preparing
+tes   9090/tcp                 my-prometheus5.1.ockma9i9m7ucf4geo7qqwrfhc
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   51 minutes ago   Up 51 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours1/1: preparing
+5c179ddf3e6c   node:12-alpine                     "docker-entrypoint.s…"   2 hours ago      Up 2 hours1/1: preparing
+overall progress: 0 out of 1 tasks
+      3306/tcp, 33060/tcp      boring_hodgkin
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 houroverall progress: 0 out of 1 tasks
+1/1: preparing
+s                              stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+db34dff7ef57   redis                              "docker-entrypoint.s…"   20 hours ago     Up 20 hours     6379/tcp                 clever_easley
+PS C:\Users\HP\OneDrive\Desktop\kubernets> cd
+PS C:\Users\HP\OneDrive\Desktop\kubernets> cd ..
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+PS C:\Users> cd ..
+PS C:\> docker ps
+CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS    1/1: preparing
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   17 minutes ago   Up 17 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+overall progress: 0 out of 1 tasks
+1/1: preparing
+20417a946272   prom/prometheus:latest             "/bin/prometheus --c…"   18 minutes ago   Up 18 minutes   9090/tcp                 my-prometheus5.1.ockma9i9m7ucf4geo7qqwrfhc
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   56 minutes ago   Up 56 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+      0.0.0.0:3001->3001/tcp   intelligent_brown
+abbd0ab2e083   mysql:5.7                          "docker-entrypoint.s…"   3 hours ago      Up 3 hours      3306/tcp, 33060/tcp      boring_hodgkin
+overall progress: 0 out of 1 tasks
+1/1: preparing
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   19 hours ago     Up 19 hours                              stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+      PORTS                    NAMES
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   19 minutes ago   Up 19 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+overall progress: 0 out of 1 tasks
+1/1: preparing
+20417a946272   prom/prometheus:latest             "/bin/prometheus --c…"   21 minutes ago   Up 20 minuoverall progress: 0 out of 1 tasks
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing [=================================>                 ]
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 hour1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+db34dff7ef57   redis                              "docker-entrypoint.s…"   21 hours ago     Up 21 hours     6379/tcp                 clever_easley
+PS C:\> docker service create --replicas 1 --name myy-promethus
+"docker service create" requires at least 1 argument.
+See 'docker service create --help'.
+
+Usage:  docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+>> type=bind,source=C:/tmp/promethus.yaml,destination=/etc/promethus/promethus.yaml `
+>> publish published=3000,target=3000,protocol=tcp `
+>> prom/promethus
+image publish:latest could not be accessed on a registry to record
+its digest. Each node will access publish:latest independently,
+possibly leading to different nodes running different
+versions of the image.
+
+x8fs3qxq61db97kta97r7hbvn
+overall progress: 0 out of 1 tasks
+1/1: preparing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users> cd HP\OneDrive\Desktop\kubernets
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl apply -f pod.yaml
+pod/demo created
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl get pods
+NAME   READY   STATUS    RESTARTS   AGE
+demo   1/1     Running   0          12s
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl logs demo
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=37 time=30.683 ms
+64 bytes from 8.8.8.8: seq=1 ttl=37 time=25.269 ms
+64 bytes from 8.8.8.8: seq=2 ttl=37 time=25.463 ms
+64 bytes from 8.8.8.8: seq=3 ttl=37 time=25.459 ms
+64 bytes from 8.8.8.8: seq=4 ttl=37 time=26.976 ms
+64 bytes from 8.8.8.8: seq=5 ttl=37 time=25.010 ms
+64 bytes from 8.8.8.8: seq=6 ttl=37 time=24.628 ms
+64 bytes from 8.8.8.8: seq=7 ttl=37 time=25.070 ms
+64 bytes from 8.8.8.8: seq=8 ttl=37 time=24.920 ms
+64 bytes from 8.8.8.8: seq=9 ttl=37 time=25.093 ms
+64 bytes from 8.8.8.8: seq=10 ttl=37 time=25.960 ms
+64 bytes from 8.8.8.8: seq=11 ttl=37 time=24.437 ms
+64 bytes from 8.8.8.8: seq=12 ttl=37 time=26.875 ms
+64 bytes from 8.8.8.8: seq=13 ttl=37 time=24.599 ms
+64 bytes from 8.8.8.8: seq=14 ttl=37 time=24.942 ms
+64 bytes from 8.8.8.8: seq=15 ttl=37 time=24.795 ms
+64 bytes from 8.8.8.8: seq=16 ttl=37 time=26.958 ms
+64 bytes from 8.8.8.8: seq=17 ttl=37 time=24.682 ms
+64 bytes from 8.8.8.8: seq=18 ttl=37 time=27.858 ms
+64 bytes from 8.8.8.8: seq=19 ttl=37 time=25.669 ms
+64 bytes from 8.8.8.8: seq=20 ttl=37 time=25.595 ms
+64 bytes from 8.8.8.8: seq=21 ttl=37 time=25.567 ms
+64 bytes from 8.8.8.8: seq=22 ttl=37 time=26.007 ms
+64 bytes from 8.8.8.8: seq=23 ttl=37 time=25.595 ms
+64 bytes from 8.8.8.8: seq=24 ttl=37 time=25.540 ms
+64 bytes from 8.8.8.8: seq=25 ttl=37 time=25.039 ms
+64 bytes from 8.8.8.8: seq=26 ttl=37 time=25.135 ms
+64 bytes from 8.8.8.8: seq=27 ttl=37 time=25.075 ms
+64 bytes from 8.8.8.8: seq=28 ttl=37 time=30.378 ms
+64 bytes from 8.8.8.8: seq=29 ttl=37 time=25.181 ms
+64 bytes from 8.8.8.8: seq=30 ttl=37 time=24.878 ms
+64 bytes from 8.8.8.8: seq=31 ttl=37 time=24.617 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: No such image: publish:latest
+1/1: preparing
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl delete -f pod.yaml
+pod "demo" deleted
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker swarm init
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker swarm join --token
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+overall progress: 1 out of 1 tasks
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+ID             NAME      IMAGE        NODE             DESIRED STATE   CURRENT STATE                ERoverall progress: 0 out of 1 tasks
+6usz3373zukh   demo.1    alpine:3.5   docker-desktop   Running         Running about a minute ago
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | PING 8.8.8.8 (8.8.8.8): 56 data bytes
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=0 ttl=37 time=29.534 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=1 ttl=37 time=25.418 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=3 ttl=37 time=27.351 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=4 ttl=37 time=24.842 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=6 ttl=37 time=26.218 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=8 ttl=37 time=25.736 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=9 ttl=37 time=24.884 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=10 ttl=37 time=27.967 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=11 ttl=37 time=28.161 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=12 ttl=37 time=25.315 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=13 ttl=37 time=24.721 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=15 ttl=37 time=30.128 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=16 ttl=37 time=28.225 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=21 ttl=37 time=117.016 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=22 ttl=37 time=24.849 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=23 ttl=37 time=27.233 ms
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=27 ttl=37 time=24.969 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=28 ttl=37 time=26.209 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=33 ttl=37 time=132.533 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=35 ttl=37 time=25.983 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=36 ttl=37 time=31.363 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=37 ttl=37 time=25.732 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=38 ttl=37 time=26.754 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=39 ttl=37 time=25.322 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=40 ttl=37 time=26.192 ms
+overall progress: 0 out of 1 tasks
+1/1: assigned
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=45 ttl=37 time=25.381 ms
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=47 ttl=37 time=176.605 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=48 ttl=37 time=25.207 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=49 ttl=37 time=27.273 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=54 ttl=37 time=25.156 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=55 ttl=37 time=25.274 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=56 ttl=37 time=24.336 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=61 ttl=37 time=25.824 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=64 ttl=37 time=164.615 ms
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=66 ttl=37 time=25.577 ms
+1/1: preparing
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=73 ttl=37 time=25.306 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=75 ttl=37 time=25.435 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=76 ttl=37 time=25.790 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=79 ttl=37 time=110.392 ms
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+1/1: preparing
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=85 ttl=37 time=26.718 ms
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=88 ttl=37 time=27.448 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=89 ttl=37 time=25.471 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=90 ttl=37 time=25.464 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=91 ttl=37 time=25.681 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=92 ttl=37 time=25.390 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=93 ttl=37 time=23.922 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=94 ttl=37 time=25.238 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: assigned
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=99 ttl=37 time=61.183 ms
+1/1: pending
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=101 ttl=37 time=26.718 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=102 ttl=37 time=24.981 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=103 ttl=37 time=32.323 ms
+overall progress: 0 out of 1 tasks
+1/1: assigned
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=106 ttl=37 time=252.795 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=107 ttl=37 time=24.686 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=108 ttl=37 time=25.617 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=109 ttl=37 time=25.959 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=110 ttl=37 time=25.290 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=111 ttl=37 time=26.512 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=112 ttl=37 time=25.412 ms
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=116 ttl=37 time=25.436 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=117 ttl=37 time=25.738 ms
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=118 ttl=37 time=25.268 ms
+overall progress: 0 out of 1 tasks
+demo.1.6usz3373zukh@docker-desktop    | 64 bytes from 8.8.8.8: seq=120 ttl=37 time=54.858 ms
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service rm demo
+demo
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl apply -f bb.yaml
+deployment.apps/bb-demo created
+overall progress: 0 out of 1 tasks
+1/1: preparing
+NAME      READY   UP-TO-DATE   AVAILABLE   AGE
+bb-demo   0/1     1            0           23s
+PS C:\Users\HP\OneDrive\Desktop\kubernets> kubectl get services
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+service "bb-entrypoint" deleted
+1/1: preparing
+CONTAINER ID   IMAGE                              COMMAND                  CREATED             STATUS             PORTS                    NAMES
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   About an hour ago   Up About an hour   0.0.0.0:8000->8000/tcp   getting-started-master-docs-1
+30a79c4be7d6   node:12-alpine                     "docker-entrypoint.s…"   About an hour ago   Up About an hour   0.0.0.0:3000->3000/tcp   suspicious_goldberg
+overall progress: 0 out of 1 tasks
+1/1: preparing
+abbd0ab2e083   mysql:5.7                          "docker-entrypoint.s…"   2 hours ago         Up 2 hooverall progress: 0 out of 1 tasks
+e6e84e42fe58   getting-started                    "docker-entrypoint.s…"   11 hours ago        Up 11 h1/1: preparing
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   18 hours ago        Up 18 hours                                 stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   18 hours ago        Up 18 hoverall progress: 0 out of 1 tasks
+db34dff7ef57   redis                              "docker-entrypoint.s…"   19 hours ago        Up 19 hours        6379/tcp                 clever_easley
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+1/1: preparing
+ours        9090/tcp                 my-prometheus4.1.ri4rbjmt0uudvm2ponrej4fsc
+c5b7cb94528b   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago        Up 20 hours        9090/tcp                 my-prometheus5.1.lyiu2ec7abxldypljdu4sdtdi
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+its digest. Each node will access bulletinboard:1.0 independently,
+possibly leading to different nodes running different
+versions of the image.
+overall progress: 0 out of 1 tasks
+1/1: preparing
+ID             NAME             MODE         REPLICAS   IMAGE                    PORTS
+overall progress: 0 out of 1 tasks
+n1kdi2y6ez27   my-prometheus    replicated   0/1        prom/prometheus:latest   *:9090->9090/tcp
+ctxtigvv7gkk   my-prometheus1   replicated   0/1        prom/prometheus:latest   *:9091->9091/tcp
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+lmq8zq99ny2m   my-prometheus5   replicated   1/1        prom/prometheus:latest   *:9095->9095/tcp
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack deploy -c bb-stack.yaml demo
+Updating service demo_bb-app (id: 2ewjmursmd6w1gozg06sn6h4h)
+overall progress: 0 out of 1 tasks
+its digest. Each node will access bulletinboard:1.0 independently,
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker service ls
+ID             NAME             MODE         REPLICAS   IMAGE                    PORTS
+2ewjmursmd6w   demo_bb-app      replicated   0/1        bulletinboard:1.0        *:3000->3030/tcp
+n1kdi2y6ez27   my-prometheus    replicated   0/1        prom/prometheus:latest   *:9090->9090/tcp
+overall progress: 0 out of 1 tasks
+xwdv2zzbdf0f   my-prometheus2   replicated   0/1        prom/prometheus:latest   *:9092->9092/tcp
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: assigned
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack deploy -c bb-stack.yaml demo
+Updating service demo_bb-app (id: 2ewjmursmd6w1gozg06sn6h4h)
+image bulletinboard:1.0 could not be accessed on a registry to record
+its digest. Each node will access bulletinboard:1.0 independently,
+overall progress: 0 out of 1 tasks
+1/1: preparing
+
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker stack rm demo
+Removing service demo_bb-app
+Removing network demo_default
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   36 minutes ago   Up 36 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours      0.0.0.0:8000->8000/tcp   getting-started-master-docs-1
+5c179ddf3e6c   node:12-alpine                     "docker-entrypoint.s…"   2 hours ago      Up 2 hours      0.0.0.0:3001->3001/tcp   intelligent_brown
+overall progress: 0 out of 1 tasks
+1/1: preparing
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 hours     0.0.0.0:3002->3002/tcp   jovial_tereshkova
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   19 hours ago     Up 19 hours                              stoic_solomon
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: preparing
+s     9090/tcp                 my-prometheus3.1.iuxivrh782b8izj0om9dxhh0n
+e852b59c96aa   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago     Up 20 hours     9090/tcp                 my-prometheus4.1.ri4rbjmt0uudvm2ponrej4fsc
+c5b7cb94528b   prom/prometheus:latest             "/bin/prometheus --c…"   20 hours ago     Up 20 houroverall progress: 0 out of 1 tasks
+1/1: No such image: publish:latest
+c5b7cb94528b
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker rm -f e852b59c96aa
+e852b59c96aa
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker rm -f e852b59c96aa
+overall progress: 0 out of 1 tasks
+PS C:\Users\HP\OneDrive\Desktop\kubernets> docker rm -f d546f4316a95
+1/1: preparing
+overall progress: 0 out of 1 tasks
+1/1: assigned
+1/1: preparing
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   12 minutes ago   Up 12 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+812f2299692a   prom/prometheus:latest             "/bin/prometheus --c…"   13 minutes ago   Up 13 minuoverall progress: 0 out of 1 tasks
+1/1: preparing
+tes   9090/tcp                 my-prometheus5.1.ockma9i9m7ucf4geo7qqwrfhc
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   51 minutes ago   Up 51 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours1/1: preparing
+5c179ddf3e6c   node:12-alpine                     "docker-entrypoint.s…"   2 hours ago      Up 2 hours1/1: preparing
+overall progress: 0 out of 1 tasks
+      3306/tcp, 33060/tcp      boring_hodgkin
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 houroverall progress: 0 out of 1 tasks
+1/1: preparing
+s                              stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+db34dff7ef57   redis                              "docker-entrypoint.s…"   20 hours ago     Up 20 hours     6379/tcp                 clever_easley
+PS C:\Users\HP\OneDrive\Desktop\kubernets> cd
+PS C:\Users\HP\OneDrive\Desktop\kubernets> cd ..
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+PS C:\Users> cd ..
+PS C:\> docker ps
+CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS    1/1: preparing
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   17 minutes ago   Up 17 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+overall progress: 0 out of 1 tasks
+1/1: preparing
+20417a946272   prom/prometheus:latest             "/bin/prometheus --c…"   18 minutes ago   Up 18 minutes   9090/tcp                 my-prometheus5.1.ockma9i9m7ucf4geo7qqwrfhc
+76e0018f1e45   getting-started                    "docker-entrypoint.s…"   56 minutes ago   Up 56 minutes   0.0.0.0:3000->3000/tcp   beautiful_ardinghelli
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+      0.0.0.0:3001->3001/tcp   intelligent_brown
+abbd0ab2e083   mysql:5.7                          "docker-entrypoint.s…"   3 hours ago      Up 3 hours      3306/tcp, 33060/tcp      boring_hodgkin
+overall progress: 0 out of 1 tasks
+1/1: preparing
+2f4b6ca380c6   ubuntu                             "bash -c 'shuf -i 1-…"   19 hours ago     Up 19 hours                              stoic_solomon
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: No such image: publish:latest
+      PORTS                    NAMES
+10ea506b7802   prom/prometheus:latest             "/bin/prometheus --c…"   19 minutes ago   Up 19 minutes   9090/tcp                 my-prometheus3.1.lkpcf2f2n7xx4a16r92j7kzpy
+overall progress: 0 out of 1 tasks
+1/1: preparing
+20417a946272   prom/prometheus:latest             "/bin/prometheus --c…"   21 minutes ago   Up 20 minuoverall progress: 0 out of 1 tasks
+2fd78fc318fd   getting-started-master_docs        "mkdocs serve -a 0.0…"   2 hours ago      Up 2 hours1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing [=================================>                 ]
+e6e84e42fe58   736ab39b027d                       "docker-entrypoint.s…"   12 hours ago     Up 12 hour1/1: No such image: publish:latest
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+97dd95c51995   athulyakrishnadoc1/myfile:latest   "docker-entrypoint.s…"   19 hours ago     Up 19 hours                              pedantic_cray
+db34dff7ef57   redis                              "docker-entrypoint.s…"   21 hours ago     Up 21 hours     6379/tcp                 clever_easley
+PS C:\> docker service create --replicas 1 --name myy-promethus
+"docker service create" requires at least 1 argument.
+See 'docker service create --help'.
+
+Usage:  docker service create [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+overall progress: 0 out of 1 tasks
+1/1: preparing
+1/1: preparing
+>> type=bind,source=C:/tmp/promethus.yaml,destination=/etc/promethus/promethus.yaml `
+>> publish published=3000,target=3000,protocol=tcp `
+>> prom/promethus
+image publish:latest could not be accessed on a registry to record
+its digest. Each node will access publish:latest independently,
+possibly leading to different nodes running different
+versions of the image.
+
+x8fs3qxq61db97kta97r7hbvn
+overall progress: 0 out of 1 tasks
+1/1: preparing
+
+
+
+
+
+
+
+
+
+
+
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+
+
+
+
+
+
+
+
+
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+
+
+
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+
+overall progress: 0 out of 1 tasks
+1/1: assigned  [======================>                            ]
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+
+
+
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+
+overall progress: 0 out of 1 tasks
+
+
+
+
+
+
+
+overall progress: 0 out of 1 tasks
+1/1: pending   [================>                                  ]
+1/1: preparing [=================================>                 ]
+
+
+
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+
+
+
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+overall progress: 0 out of 1 tasks
+1/1: preparing [=================================>                 ]
+1/1: preparing [=================================>                 ]
+
+
+
+
+
+
+
+
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+
+
+
+
+
+
+
+
+
+overall progress: 0 out of 1 tasks
+
+1/1: preparing [=================================>                 ]
+
+
+
+
+
+
+overall progress: 0 out of 1 tasks
+overall progress: 0 out of 1 tasks
+1/1: assigned  [======================>                            ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

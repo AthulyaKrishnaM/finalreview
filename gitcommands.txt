@@ -1,0 +1,73 @@
+Microsoft Windows [Version 10.0.19043.1466]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git version
+git version 2.32.0.windows.1
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice> git config --global user.name
+Athulya Krishna M
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git config --global user.email
+Athulya.Mekoodathingal@ust.com
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/Gitpracice/.git/
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git add .
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file1.txt
+        new file:   file2.txt
+        new file:   file3.txt
+
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git commit -am "first commit"
+[master (root-commit) f9b1b2a] first commit
+ 3 files changed, 4 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+ create mode 100644 file3.txt
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git remote add origin https://github.com/AthulyaKrishnaM/Gitpractice.git
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (5/5), 355 bytes | 44.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/AthulyaKrishnaM/Gitpractice.git
+ * [new branch]      master -> master
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git log
+commit f9b1b2a9ec4c57217fb03d718139fb0ddcfab29a (HEAD -> master, origin/master)
+Author: Athulya Krishna M <Athulya.Mekoodathingal@ust.com>
+Date:   Fri Jan 21 13:08:04 2022 +0530
+
+    first commit
+
+C:\Users\HP\OneDrive\Desktop\Gitpracice>git branch
+* master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

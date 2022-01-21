@@ -1,0 +1,70 @@
+sarayu@LAPTOP-BIAO0RTG:~$ nano odd.sh
+sarayu@LAPTOP-BIAO0RTG:~$ cat odd.sh
+ #!/bin/bash
+echo enter the number
+read number
+if [ $((number%2)) -eq 0 ]
+         then echo even number
+         else echo  odd  number
+fi
+sarayu@LAPTOP-BIAO0RTG:~$ ./odd.sh
+enter the number
+4
+even number
+sarayu@LAPTOP-BIAO0RTG:~$ ./odd.sh
+enter the number
+1
+odd number
+
+------------------------------------------------------------
+sarayu@LAPTOP-BIAO0RTG:~$ nano ifelse.sh
+sarayu@LAPTOP-BIAO0RTG:~$ cat ifelse.sh
+echo enter  string1
+read s1
+echo enter string2
+read s2
+if [ $s1 == $s2 ]
+then
+      echo "match"
+else
+      echo "not match"
+fi
+sarayu@LAPTOP-BIAO0RTG:~$ ./ifelse.sh
+enter string1
+asd
+enter string2
+asd
+match
+sarayu@LAPTOP-BIAO0RTG:~$ ./ifelse.sh
+enter string1
+aed
+enter string2
+yhu
+not match
+
+----------------------------------------------------------
+sarayu@LAPTOP-BIAO0RTG:~$ nano food.sh
+sarayu@LAPTOP-BIAO0RTG:~$ cat food.sh
+#!/bin/bash
+echo "Enter fav food"
+read favfood
+if [ $favfood = noodles ]
+       then echo  "my favfood is noodles"
+elif [ $favfood = biriyani ]
+        then echo  "my fav food is biriyani"
+elif [ $favfood = icecream ]
+        then echo  "my fav food is icecream"
+        else echo  "this is not my fav food"
+fi
+sarayu@LAPTOP-BIAO0RTG:~$ ./food.sh
+Enter fav food
+biriyani
+my fav food is biriyani
+sarayu@LAPTOP-BIAO0RTG:~$ ./food.sh
+Enter fav food
+tea
+this is not my fav food
+sarayu@LAPTOP-BIAO0RTG:~$
+
+
+
